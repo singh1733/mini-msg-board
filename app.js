@@ -23,4 +23,19 @@ app.get("/", (req, res) => {
   res.render("index", { messages: messages });
 });
 
+app.get("/new", (req, res) => {
+  res.render("new");
+});
+
+app.use(express.urlencoded({ extended: true }));
+
+app.post("/new", (req, res) => {
+  messages.push({
+    text: req.body.message,
+    user: req.body.userName,
+    added: new Date(),
+  });
+  res.redirect("/");
+});
+
 app.listen(PORT, () => console.log("Port 3000 running"));
