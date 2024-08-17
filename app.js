@@ -27,6 +27,10 @@ app.get("/new", (req, res) => {
   res.render("new");
 });
 
+app.get("/msg/:index", (req, res) => {
+  res.render("msg", { message: messages[parseInt(req.params.index)] });
+});
+
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/new", (req, res) => {
