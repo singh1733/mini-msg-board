@@ -1,11 +1,33 @@
-<h1>New Message</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-<form method="POST" action="/new">
-  <label for="userName"> Name: </label>
-  <input type="text" id="userName" name="userName" required minlength="1" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./new.css" />
+  </head>
+  <body>
+    <h1>New Message</h1>
 
-  <label for="message"> Message: </label>
-  <input type="text" id="message" name="message" required minlength="1" />
+    <form method="POST" action="/new">
+      <span>
+        <label for="userName"> Name: </label>
+        <input
+          type="text"
+          id="userName"
+          name="userName"
+          required
+          minlength="1"
+        />
+      </span>
+      <span>
+        <label for="message"> Message: </label>
+        <input type="text" id="message" name="message" required minlength="1" />
+      </span>
 
-  <button>Submit</button>
-</form>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
