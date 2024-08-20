@@ -1,0 +1,41 @@
+body {
+  background-color: #caa478;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vw;
+  padding: 20px;
+}
+
+.new-msg {
+  align-self: flex-start;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 15px 5px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:10px
+}
+
+.message {
+  background-color: blue;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 2px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.message * {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 1px;
+  padding: 5px;
+}
