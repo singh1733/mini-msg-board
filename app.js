@@ -2,13 +2,11 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-
 const path = require("node:path");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-
-const assetsPath=path.join(__dirname,"public");
+const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
 const messages = [
@@ -33,7 +31,12 @@ app.get("/new", (req, res) => {
 });
 
 app.get("/msg/:index", (req, res) => {
-  res.render("msg", { message: messages[parseInt(req.params.index)] });
+  const index = parseInt(req.params.index, 10); 
+  if (index >= 0 && index < messages.length) {
+    res.render("msg", { message: messages[index] });
+  } else {
+    res.status(404).send("Message not found"); 
+  }
 });
 
 app.use(express.urlencoded({ extended: true }));
@@ -48,5 +51,3 @@ app.post("/new", (req, res) => {
 });
 
 app.listen(PORT, () => console.log("Port 3000 running"));
-
-

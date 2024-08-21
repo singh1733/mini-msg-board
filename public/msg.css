@@ -1,0 +1,26 @@
+body {
+  background-color: blue;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows:  1fr 1fr 1fr 1fr;
+  font-size: 40px;
+
+}
+
+body * {
+  background-color: white;
+  margin: 4px;
+  padding: 5px;
+}
+
+button{
+  border: 5px solid blue;
+  padding: 5px 25px;
+  border-radius: 10px;
+}
